@@ -18,9 +18,7 @@
 						<div class="form-group">
 							{!! Form::label('email', 'Email:', ['class' =>'col-md-4 control-label']) !!}
 							<div class="col-md-6">
-								{!! Form::email('email', old('email'),
-									['class' =>'form-control']
-								) !!}
+								{!! Form::email('email', old('email'), ['class' =>'form-control']) !!}
 							</div>
 						</div>
 

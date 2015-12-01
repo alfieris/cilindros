@@ -36,13 +36,15 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Inicio</a></li>
+					<li><a href="{!! url('home') !!}">Inicio</a></li>
+					<li><a href="{!! url('terceros/create') !!}">Crear tercero</a></li>
+					<li><a href="{!! url('terceros') !!}">Lista de terceros</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
+						<li><a href="{{ url('/auth/login') }}">Entrar</a></li>
+						<li><a href="{{ url('/auth/register') }}">Registrarme</a></li>
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -56,7 +58,10 @@
 		</div>
 	</nav>
 
-	@yield('content')
+
+	<div class="container">
+		@yield('content')
+	</div>
 
 	<!-- Scripts -->
 	{!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
